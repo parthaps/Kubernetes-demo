@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+  labels:
+    app: node-app
+spec:
+  replicas: 5
+  template:
+    metadata:
+      name: node-app
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: node-app
+        image: saurabhdev01/node-app:latest
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: node-app
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app-service
+spec:
+  selector:
+    app: node-app
+  ports:
+    - port: 80
+  type: LoadBalancer
+  externalIPs:
+  - 172.31.17.48
