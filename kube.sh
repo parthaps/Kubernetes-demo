@@ -69,3 +69,5 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 #kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
 
 echo "Done."
+
+# kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
