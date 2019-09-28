@@ -1,0 +1,12 @@
+1) Set the hostname of master agent and add the entry in /etc/hosts file
+2) Run the script on the master.
+3) Set the hostname of slave agent  and add the host entry in /etc/hosts file on both (master and slave)
+4) Run the script on slave .
+5) Now you will have some join commands that will join the agent with master , execute those steps on node
+   you will get the join commands once you do the installation of kube master    
+6) Last step to execute below commnd on master
+#kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
+
+Check
+kubectl get pods --all-namespace
+kubectl get nodes
