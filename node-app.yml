@@ -36,4 +36,4 @@ spec:
     - port: 80
   type: LoadBalancer
   externalIPs:
-  - 172.31.17.48
+  - 10.128.0.19
